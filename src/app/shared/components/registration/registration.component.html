@@ -1,0 +1,56 @@
+<div class="registration-container my-4">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="fill" class="form-group">
+            <mat-label>Name</mat-label>
+            <input matInput id="name" formControlName="name" placeholder="Enter your name" />
+            <mat-error *ngIf="registrationForm.get('name')?.hasError('required')">
+                Name is required.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-group">
+            <mat-label>Email</mat-label>
+            <input matInput id="email" formControlName="email" type="email" placeholder="Enter your email" />
+            <mat-error *ngIf="registrationForm.get('email')?.hasError('required')">
+                Email is required.
+            </mat-error>
+            <mat-error *ngIf="registrationForm.get('email')?.hasError('email')">
+                Enter a valid email address.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-group">
+            <mat-label>Password</mat-label>
+            <input matInput id="password" formControlName="password" type="password" placeholder="Enter password" />
+            <mat-error *ngIf="registrationForm.get('password')?.hasError('required')">
+                Password is required.
+            </mat-error>
+            <mat-error *ngIf="registrationForm.get('password')?.hasError('minlength')">
+                Password must be at least 6 characters long.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-group">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput id="confirmPassword" formControlName="confirmPassword" type="password"
+                placeholder="Confirm password" />
+            <mat-error *ngIf="registrationForm.get('confirmPassword')?.hasError('required')">
+                Please confirm your password.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-group">
+            <mat-label>Role</mat-label>
+            <mat-select formControlName="role">
+                <mat-option value="student">Student</mat-option>
+                <mat-option value="teacher">Teacher</mat-option>
+            </mat-select>
+            <mat-error *ngIf="registrationForm.get('role')?.hasError('required')">
+                Role is required.
+            </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid">Register</button>
+    </form>
+</div>

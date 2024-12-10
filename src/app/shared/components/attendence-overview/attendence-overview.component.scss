@@ -1,0 +1,29 @@
+.attendance-overview {
+    .filter-container {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    mat-form-field {
+        width: 200px;
+    }
+
+    mat-table {
+        width: 100%;
+    }
+
+    mat-header-cell,
+    mat-cell {
+        padding: 8px;
+        text-align: left;
+    }
+
+    mat-header-row {
+        background-color: #f2f2f2;
+    }
+
+    button {
+        margin-top: 20px;
+    }
+}

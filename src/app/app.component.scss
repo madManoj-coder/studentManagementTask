@@ -1,0 +1,38 @@
+
+::ng-deep mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+button {
+    color: white;
+}
+
+.main-content {
+    padding: 20px;
+    background-color: #f4f4f9;
+    min-height: calc(100vh - 64px);
+}
+
+mat-button {
+    color: white;
+}
+
+mat-toolbar {
+    background-color: #3f51b5;
+}
+
+@media (max-width: 768px) {
+    mat-toolbar {
+        text-align: center;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+}

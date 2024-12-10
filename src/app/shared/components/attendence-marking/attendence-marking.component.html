@@ -1,0 +1,14 @@
+<div class="attendance-marking">
+    <h2>Mark Attendance</h2>
+    <form [formGroup]="attendanceForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="status">Status</label>
+            <mat-select formControlName="status" id="status">
+                <mat-option value="true">Present</mat-option>
+                <mat-option value="false">Absent</mat-option>
+            </mat-select>
+        </div>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="!attendanceForm.valid">Submit</button>
+    </form>
+</div>

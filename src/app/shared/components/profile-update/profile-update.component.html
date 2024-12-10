@@ -1,0 +1,21 @@
+<div class="profile-update">
+    <h2>Update Profile</h2>
+    <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Name</mat-label>
+            <input matInput id="name" formControlName="name" type="text" placeholder="Enter your name" />
+            <mat-error *ngIf="profileForm.get('name')?.hasError('required')">Name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Contact</mat-label>
+            <input matInput id="contact" formControlName="contact" type="text"
+                placeholder="Enter your contact number" />
+            <mat-error *ngIf="profileForm.get('contact')?.hasError('required')">Contact number is required</mat-error>
+            <mat-error *ngIf="profileForm.get('contact')?.hasError('pattern')">Invalid contact number</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="!profileForm.valid">Save</button>
+    </form>
+</div>

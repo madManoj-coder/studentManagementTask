@@ -1,0 +1,33 @@
+.attendance-marking {
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+
+    h2 {
+        text-align: center;
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        mat-select {
+            width: 100%;
+        }
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+}
